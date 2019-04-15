@@ -35,7 +35,7 @@ sh "sudo terraform plan $jenkins_node_custom_workspace_path"
 
 stage('apply_changes') {
 steps {
-sudo terraform apply $jenkins_node_custom_workspace_path"
+sh "sudo terraform apply $jenkins_node_custom_workspace_path"
 }
 }
 }
