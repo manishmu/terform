@@ -13,6 +13,8 @@ env.terraform_version = '0.11.10'
 pipeline {
 agent {
 node {
+customWorkspace "$jenkins_node_custom_workspace_path"
+label "$jenkins_node_label"
 } 
 }
 stages {
