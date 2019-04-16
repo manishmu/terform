@@ -32,24 +32,4 @@ key_name = "id_rsa"
 count = "2"
   tags {
     Name = "Webserver"
-  }
-  security_groups = [ "default" ]
-connection {
-  type         = "ssh"
-  user = "ec2-user"
-  private_key = "${file("/home/manish/.ssh/id_rsa")}"
-  agent = "false"
-  }
-provisioner "remote-exec" {
-    inline = [
-     "sudo yum install httpd -y",
-     "sudo service httpd start",
-     "sudo chkconfig httpd on",
-    "sudo chmod -R 777 /var/www/html"
-     ]
-  }
-  provisioner "file" {
-   source = "index.html"
-   destination = "/var/www/html/index.html"
-  }
-}
+  } 
