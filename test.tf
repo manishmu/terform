@@ -1,6 +1,6 @@
 provider "aws" {
-  access_key = "AKIA3LR4AZ5NGXM7WYVR"
-  secret_key = "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"
+  access_key = "AKIA3LR4AZ5NKU4ISZ5G"
+  secret_key = "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"
   region     = "us-east-1"
   }
 resource "aws_iam_user" "test" {
