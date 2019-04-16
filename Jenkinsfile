@@ -1,15 +1,11 @@
-pipeline {
-agent { 
 node {
-} 
-}
+
 stages {
 stage('fetch_latest_code') {
 steps {
 sh "mkdir -p /Storage/terraform/terraform-test"
 sh "cd /Storage/terraform/terraform-test"
 sh "git clone https://github.com/manishmu/terform.git"
-
 }
 }
 
