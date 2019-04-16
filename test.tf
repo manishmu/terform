@@ -1,5 +1,6 @@
 provider "aws" {
-  region = "us-east-1"
+  access_key = "AKIAIANFM4UMP6JRTRMQ"
+  region     = "us-east-1"
 }
 resource "aws_iam_user" "test" {
   name = "Sarish"
