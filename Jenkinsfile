@@ -1,6 +1,4 @@
 node {
-
-stages {
 stage('fetch_latest_code') {
 steps {
 sh "mkdir -p /Storage/terraform/terraform-test"
@@ -20,7 +18,6 @@ sh "sudo terraform plan "
 stage('apply_changes') {
 steps {
 sh "sudo terraform apply /Storage/terraform/terraform-test"
-}
 }
 }
 post { 
