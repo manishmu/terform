@@ -1,6 +1,8 @@
 provider "aws" {
+  access_key = "AKIA3LR4AZ5NGXM7WYVR"
+  secret_key = "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"
   region     = "us-east-1"
-}
+  }
 resource "aws_iam_user" "test" {
   name = "Sarish"
 }
