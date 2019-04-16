@@ -3,8 +3,8 @@ pipeline {
 stages {
 stage('export keys'){
 steps{
-sh "export access_key=AKIA3LR4AZ5NKU4ISZ5G"
-sh "export secret_key=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"
+sh "export access_key=xxxxxxxxxxxxxxx"
+sh "export secret_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 }
 stage('fetch_latest_code') {
