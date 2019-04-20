@@ -1,6 +1,6 @@
 provider "aws" {
-  access_key = "xxxxxx"
-  secret_key = "xxxxxxxxxx"
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
   region     = "us-east-1"
   }
 resource "aws_iam_user" "test" {
