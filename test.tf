@@ -1,5 +1,5 @@
 provider "aws" {
-  shared_credentials_file = "/home/manish.aws/credentials"
+  shared_credentials_file = "/home/manish/.aws/credentials"
   profile    = "default"
   region     = "us-east-1"
   }
