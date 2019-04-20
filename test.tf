@@ -36,3 +36,23 @@ count = "1"
     Name = "Webserver"
   } 
   }
+security_groups = [ "default" ]
+connection {
+  type = "ssh"
+  user = "ec2-user"
+  private_key = "${file("/Storage/terraform-work/EC2_tf_test.pem")}"
+  agent = "false"
+  }
+provisioner "remote-exec" {
+    inline = [
+     "sudo yum install httpd -y",
+     "sudo service httpd start",
+     "sudo chkconfig httpd on",
+    "sudo chmod -R 777 /var/www/html"
+     ]
+  }
+  provisioner "file" {
+   source = "index.html"
+   destination = "/var/www/html/index.html"
+  }
+}
