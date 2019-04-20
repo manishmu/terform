@@ -55,4 +55,3 @@ provisioner "remote-exec" {
    source = "index.html"
    destination = "/var/www/html/index.html"
   }
-}
