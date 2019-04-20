@@ -36,11 +36,11 @@ count = "1"
     Name = "Webserver"
   } 
   }
-security_groups = [ "default" ]
+resource "security_groups" = [ "default" ]
 connection {
   type = "ssh"
   user = "ec2-user"
-  private_key = "${file("/Storage/terraform-work/EC2_tf_test.pem")}"
+  private_key = "${file("/home/manish/.ssh/id_rsa")}"
   agent = "false"
   }
 provisioner "remote-exec" {
