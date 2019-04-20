@@ -1,6 +1,5 @@
 provider "aws" {
-  version = "~> 2.6"
-  profile = "sarika"
+  profile = "default"
   region  = "us-east-1"
   }
 resource "aws_iam_user" "test" {
