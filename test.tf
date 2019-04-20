@@ -1,4 +1,6 @@
 provider "aws" {
+  shared_credentials_file = "/Users/tf_user/.aws/creds"
+  profile    = "default"
   region     = "us-east-1"
   }
 resource "aws_iam_user" "test" {
