@@ -30,7 +30,7 @@ resource "aws_subnet" "subnet1" {
 resource "aws_instance" "Web" {
 ami = "ami-0ff8a91507f77f867"
 instance_type = "t2.micro"
-key_name = "id_rsa"
+key_name = "EC2_tf_test"
 count = "2"
   tags {
     Name = "Webserver"
