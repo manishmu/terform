@@ -1,12 +1,6 @@
 pipeline {
     agent any
 stages {
-stage('export keys'){
-steps{
-sh "export access_key=xxxxxxxxxxxxxxx"
-sh "export secret_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-}
-}
 stage('fetch_latest_code') {
 steps {
 sh "mkdir -p /tmp/terraform-test/"
