@@ -36,7 +36,9 @@ count = "1"
     Name = "Webserver"
   } 
   }
-resource "security_groups" = [ "default" ]
+resource "security_groups" { 
+  default
+  }
 connection {
   type = "ssh"
   user = "ec2-user"
