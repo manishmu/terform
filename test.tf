@@ -1,6 +1,6 @@
 provider "aws" {
   shared_credentials_file = "/home/manish/.aws/credentials"
-  profile    = "default"
+  profile    = "sarika"
   region     = "us-east-1"
   }
 resource "aws_iam_user" "test" {
