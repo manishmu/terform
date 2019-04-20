@@ -36,8 +36,8 @@ count = "1"
     Name = "Webserver"
   } 
   }
-resource "security_groups" { 
-  default
+resource "security_groups" "default" {
+  vpc_id = "${aws_vpc.main.id}"
   }
 connection {
   type = "ssh"
