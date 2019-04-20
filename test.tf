@@ -16,7 +16,7 @@ resource "aws_vpc" "main" {
   cidr_block = "190.160.0.0/16"
   instance_tenancy = "default"
   tags {
-    Name = "Main"
+    Name = "Main-tf-created"
     Location = "pune"
   }
  }
