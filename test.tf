@@ -15,6 +15,8 @@ resource "aws_iam_group_membership" "test" {
 resource "aws_vpc" "main" {
   cidr_block = "190.160.0.0/16"
   instance_tenancy = "default"
+  default_security_group_id = ["${aws_security_group.terrform-test.id}"]
+  default = "true"
   tags {
     Name = "Main-tf-created"
     Location = "pune"
@@ -27,6 +29,7 @@ resource "aws_subnet" "subnet1" {
      Name = "subnet1"
    }
  }
+
 resource "aws_security_group" "terrform-test" {
     name        = "terrform-test"
 }
