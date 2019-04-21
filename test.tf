@@ -15,7 +15,6 @@ resource "aws_iam_group_membership" "test" {
 resource "aws_vpc" "main" {
   cidr_block = "190.160.0.0/16"
   instance_tenancy = "default"
-  default = "true"
   tags {
     Name = "Main-tf-created"
     Location = "pune"
@@ -28,9 +27,23 @@ resource "aws_subnet" "subnet1" {
      Name = "subnet1"
    }
  }
+
 resource "aws_security_group" "terrform-test" {
-    name   = "terrform-test"
+    name        = "terrform-test"
     vpc_id = "${aws_vpc.main.id}"
+ingress {
+    protocol  = -1
+    self      = true
+    from_port = 0
+    to_port   = 0
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
 resource "aws_instance" "Web" {
 ami = "ami-0ff8a91507f77f867"
