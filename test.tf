@@ -28,9 +28,8 @@ resource "aws_subnet" "subnet1" {
      Name = "subnet1"
    }
  }
-
 resource "aws_security_group" "terrform-test" {
-    name        = "terrform-test"
+    name   = "terrform-test"
     vpc_id = "${aws_vpc.main.id}"
 ingress {
     protocol  = -1
@@ -38,7 +37,6 @@ ingress {
     from_port = 0
     to_port   = 0
   }
-
   egress {
     from_port   = 0
     to_port     = 0
