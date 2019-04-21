@@ -1,6 +1,4 @@
 provider "aws" {
-  profile = "default"
-  shared_credentials_file = "/home/manish/.aws/credentials"
   region  = "us-east-1"
   }
 resource "aws_iam_user" "test" {
@@ -36,3 +34,23 @@ count = "1"
     Name = "Webserver"
   } 
   }
+security_groups = [ "default" ]
+connection {
+  type = "ssh"
+  user = "root"
+  private_key = "${file("/home/manish/.ssh/id_rsa")}"
+  agent = "false"
+  }
+provisioner "remote-exec" {
+    inline = [
+     "sudo yum install httpd -y",
+     "sudo service httpd start",
+     "sudo chkconfig httpd on",
+    "sudo chmod -R 777 /var/www/html"
+     ]
+  }
+  provisioner "file" {
+   source = "index.html"
+   destination = "/var/www/html/index.html"
+  }
+}
