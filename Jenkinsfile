@@ -12,14 +12,16 @@ sh "sudo rm -rf /tmp/terraform-test"
 }
 stage('init_and_plan') {
 steps {
-sh " sudo su - manish"
-sh " sudo terraform init /Storage/terraform-work/"
-sh " sudo terraform plan /Storage/terraform-work/"
+sh "sudo su - manish"
+sh "sudo source /etc/profile"
+sh "sudo terraform init /Storage/terraform-work/"
+sh "sudo terraform plan /Storage/terraform-work/"
 }
 }
 stage('apply_changes') {
 steps {
 sh "sudo su - manish"
+sh "sudo source /etc/profile"
 sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 }
