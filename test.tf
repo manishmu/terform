@@ -46,8 +46,6 @@ ingress {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-}
-
 resource "aws_instance" "Web" {
 ami = "ami-0ff8a91507f77f867"
 instance_type = "t2.micro"
