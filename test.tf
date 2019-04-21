@@ -34,15 +34,3 @@ count = "1"
     Name = "Webserver"
   } 
   }
-provisioner "remote-exec" {
-    inline = [
-     "sudo yum install httpd -y",
-     "sudo service httpd start",
-     "sudo chkconfig httpd on",
-    "sudo chmod -R 777 /var/www/html"
-     ]
-  }
-  provisioner "file" {
-   source = "index.html"
-   destination = "/var/www/html/index.html"
-  }
