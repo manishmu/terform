@@ -31,18 +31,6 @@ resource "aws_subnet" "subnet1" {
 resource "aws_security_group" "terrform-test" {
     name   = "terrform-test"
     vpc_id = "${aws_vpc.main.id}"
-ingress {
-    protocol  = -1
-    self      = true
-    from_port = 0
-    to_port   = 0
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 }
 resource "aws_instance" "Web" {
 ami = "ami-0ff8a91507f77f867"
