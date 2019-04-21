@@ -27,11 +27,15 @@ resource "aws_subnet" "subnet1" {
      Name = "subnet1"
    }
  }
+resource "security_groups" "default" {
+  vpc_id = "${aws_vpc.main.id}"
+  }
 resource "aws_instance" "Web" {
 ami = "ami-0ff8a91507f77f867"
 instance_type = "t2.micro"
 key_name = "EC2_tf_test"
 user_data = "${file("/Storage/terraform-work/install.sh")}"
+aws_security_group = "default"  
 count = "1"
   tags {
     Name = "Webserver"
