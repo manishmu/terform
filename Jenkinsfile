@@ -1,3 +1,6 @@
+GIT_USERNAME="manishmu"
+GIT_PASSWORD="xxxxx"
+workspace="/var/lib/jenkins/workspace/new-terraform-deployment"
 pipeline {
     agent any
 stages {
@@ -23,5 +26,12 @@ sh "sudo su - manish"
 sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 }
+stage('push tfstate & tf file to git') {
+steps { 
+sh("git add terrform.tfstate test.tf")
+sh("git commit -m 'updatedfile'")    
+sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@https://github.com/manishmu/terform.git')
+}
+}   
 }
 }
