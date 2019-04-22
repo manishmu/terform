@@ -26,7 +26,7 @@ sh "sudo su - manish"
 sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 }
-stage('push tfstate & tf file to git') {
+stage('git_update') {
 steps { 
 sh("git add terrform.tfstate test.tf")
 sh("git commit -m 'updatedfile'")    
