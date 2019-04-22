@@ -15,7 +15,7 @@ resource "aws_iam_group_membership" "test" {
 resource "aws_security_group" "webserver" {
   name = "webserver"
   ingress {
-    protocol = tcp
+    protocol = "tcp"
     from_port = 80
     to_port   = 80
     cidr_blocks = ["0.0.0.0/0"]
