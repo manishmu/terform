@@ -1,5 +1,5 @@
-GIT_USERNAME="manishmu"
-GIT_PASSWORD="xxxxx"
+GIT_USERNAME="manish.mudholkar@gmail.com"
+GIT_PASSWORD="s@rika2306"
 workspace="/var/lib/jenkins/workspace/new-terraform-deployment"
 pipeline {
     agent any
