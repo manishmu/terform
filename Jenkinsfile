@@ -28,6 +28,7 @@ sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 stage('git_update') {
 steps { 
+sh "sudo su - manish"    
 sh("cd $workspace")
 sh("sudo git config user.email 'manish.mudholkar@gmail.com'")
 sh("sudo git config user.name 'manishmu'")
@@ -37,7 +38,7 @@ sh("sudo git status")
 sh("sudo git checkout master")    
 sh("sudo git status")
 sh("sudo git add terraform.tfstate")
-sh("sudo git commit -m 'initial commit'")
+sh("sudo git commit -m 'one file updated'")
 sh("sudo git push origin master")
 }
 }   
