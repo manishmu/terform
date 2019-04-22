@@ -28,7 +28,9 @@ sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 stage('git_update') {
 steps { 
-sh("cd $workspace")    
+sh("cd $workspace")
+sh("git config user.email 'manish.mudholkar@gmail.com'")
+sh("git config user.name 'manishmu'")
 sh("git add terraform.tfstate")
 sh("git commit -m 'updatedfile'")
 sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@https://github.com/manishmu/terform.git')
