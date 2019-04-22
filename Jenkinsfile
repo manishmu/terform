@@ -34,7 +34,7 @@ sh("git config user.name 'manishmu'")
 sh("git config --global push.default matching")
 sh("git add terraform.tfstate")
 sh("git commit -m 'updatedfile'")
-sh('git push --repo https://manishmu:s@rika2306@github.com/terform.git')
+sh('git push --repo https://manishmu:$GIT_PASSWORD@github.com/terform.git')
 }
 }   
 }
