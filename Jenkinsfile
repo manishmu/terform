@@ -33,7 +33,7 @@ sh("git config user.email 'manish.mudholkar@gmail.com'")
 sh("git config user.name 'manishmu'")
 sh("git config --global push.default matching")
 sh("git add terraform.tfstate")
-sh("git commit -m 'updatedfile'")
+sh("git commit -m 'initial commit'")
 sh("git push origin master")
 }
 }   
