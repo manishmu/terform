@@ -26,18 +26,5 @@ sh "sudo su - manish"
 sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 }
-stage('git_update') {
-steps { 
-sh "sudo su - manish"    
-sh("sudo cp $workspace/terraform.tfstate /Storage/terraform-work/")
-sh ("cd /Storage/terraform-work/")
-sh("sudo git config user.email 'manish.mudholkar@gmail.com'")
-sh("sudo git config user.name 'manishmu'")
-sh("sudo git config --global push.default matching")
-sh("sudo git add terraform.tfstate")
-sh("sudo git commit -m 'one file updated'")
-sh("sudo git push origin master")
-}
-}   
 }
 }
