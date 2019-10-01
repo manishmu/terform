@@ -13,7 +13,7 @@ sh "sudo git clone https://github.com/manishmu/terform.git /Storage/terraform-wo
 }
 stage('init_and_plan') {
 steps {
-sh "sudo su - manish"
+sh "sudo su - root"
 sh "sudo /usr/local/bin/terraform init /Storage/terraform-work/"
 sh "sudo /usr/local/bin/terraform plan /Storage/terraform-work/"
 }
