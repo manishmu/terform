@@ -11,7 +11,7 @@ sh "cd /tmp/terraform-test/"
 sh "sudo git clone https://github.com/manishmu/terform.git /tmp/terraform-test/."
 sh "sudo rm -rf /Storage/terraform-work/*"
 sh "sudo cp -rf /tmp/terraform-test/* /Storage/terraform-work/."
-sh "sudo rm -rf /tmp/terraform-test/*"   
+sh "sudo rm -rf /tmp/terraform-test"   
 }
 }
 stage('init_and_plan') {
