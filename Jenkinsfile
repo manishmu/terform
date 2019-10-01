@@ -25,7 +25,7 @@ sh "sudo /usr/local/bin/terraform plan /Storage/terraform-work/"
 stage('apply_changes') {
 steps {
 sh "sudo su - manish"
-sh "sudo terraform apply -input=false -auto-approve /Storage/terraform-work/"
+sh "sudo /usr/local/bin/terraform apply -input=false -auto-approve /Storage/terraform-work/"
 }
 }
 }
