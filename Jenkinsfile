@@ -16,7 +16,7 @@ sh "sudo rm -rf /tmp/terraform-test"
 }
 stage('init_and_plan') {
 steps {
-sh "sudo su - root"
+sh "sudo su - manish"
 sh "cd /Storage/terraform-work/"
 sh "sudo /usr/local/bin/terraform init /Storage/terraform-work/"
 sh "sudo /usr/local/bin/terraform plan /Storage/terraform-work/"
