@@ -1,6 +1,6 @@
 provider "aws" {
   profile = "default"
-  shared_credentials_file = "/home/manish/.aws/credentials"
+  shared_credentials_file = "/Storage/terraform-work/.aws/credentials"
   region  = "us-east-1"
   }
 resource "aws_iam_user" "test" {
