@@ -8,7 +8,7 @@ stage('fetch_latest_code') {
 steps {
 sh "mkdir -p /tmp/terraform-test/"
 sh "cd /tmp/terraform-test/"
-Sh "rm -rf *.*"
+Sh "sudo rm -rf /tmp/terraform-test/*.*"
 sh "sudo git clone https://github.com/manishmu/terform.git /tmp/terraform-test/."
 sh "sudo rm -rf /Storage/terraform-work/*"
 sh "sudo cp -rf /tmp/terraform-test/* /Storage/terraform-work/."
